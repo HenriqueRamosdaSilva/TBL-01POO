@@ -1,0 +1,47 @@
+1 - Explique a diferença entre tipos primitivos (ou tipos de valor) e tipos de referência.
+Com exemplo de códigos.
+Nos Tipos primitivos eles armazenam o sue valor diretamente na memoria, por isso se copiar 
+uma variavel do tipo primitivo para outra ela acaba criando uma copia independente dessa primeira.
+No exmplo ele tenta atribuit b = a depois deu um valor para b mas  a não mudou porque a memoria e separado
+using System;
+public class tiposprimitivos
+{
+    public static void Main(){
+        int a = 100;
+        int b = a; 
+        
+        b = 250; 
+        
+        Console.WriteLine("a: " + a);
+        Console.WriteLine("b: " + b); 
+    }
+}
+
+Já nos tipos referenciais o valor está armazenado em um local e vc copia a referencia desse valor por 
+isso re você modifivar um tipo referencia você vai modificar o objeto daquele valor tambem vai modificar 
+todos os referentes ligados aquele objeto.
+No exemplo ele troca o nome do objeto de fantasma azul para verde por isso tanto p1 quanto p2 vão se chamar
+ fantasma verde
+class Pessoa {
+	public string Nome;
+}public class tiposreferencia
+{
+    public static void Main()
+    {
+	Pessoa p1 = new Pessoa();
+	p1.Nome = "FantasmaAzul";
+	Pessoa p2 = p1; 
+	p2.Nome = "FantasmaVerde";
+	Console.WriteLine(p1.Nome); 
+	Console.WriteLine(p2.Nome); 
+2 - Como corrigir o erro no código abaixo?
+Basta inserir o metodo de conversão int.Parse(numero);
+using System;
+class HelloWorld {
+  static void Main() {
+object obj = "123";
+int x = int.Parse((string)obj);
+  }
+}
+3 - Qual é a saída deste código?
+A saida e 99
